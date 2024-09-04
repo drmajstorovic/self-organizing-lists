@@ -2,7 +2,7 @@
 """
 Created on Mon Sep  2 13:06:09 2024
 
-@author: majst
+@author: Dragana Majstorovic
 """
 import math
 import random
@@ -63,6 +63,7 @@ def self_organizing_list(list, access_frequency):
     
     secretary_problem(list, access_frequency)
 
+    # Could be adjusted according to our needs
     iterations = 1000
     
     metropolis_hastings(list, access_frequency, iterations)
@@ -72,6 +73,7 @@ if __name__ == '__main__':
     
     list = []
     
+    # Generates a list of 100 (or any other number) elements
     for i in range(1,101):
         list.append("element " + str(i))
     
@@ -81,7 +83,8 @@ if __name__ == '__main__':
     access_frequency = {element_i: 0 for element_i in list}
     
     # Simulates access to randomly chosen elements
-    for _ in range(500):
+    # Could be adjusted according to our needs
+    for _ in range(5000):
         element = access(list, random.randint(0, n-1))
         access_frequency[element] += 1
         self_organizing_list(list, access_frequency)
